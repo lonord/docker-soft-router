@@ -8,6 +8,6 @@ RUN chmod +x /start.sh && chmod +x /stop.sh \
 	&& /soft-router-scripts/install.sh && rm -rf /soft-router-scripts \
 	&& cp /tmp_bin/$(arch)/docker-init /docker-init && rm -rf /tmp_bin \
 	&& apt-get update \
-	&& apt-get install -y dnsmasq bridge-utils iptables hostapd \
+	&& apt-get install -y dnsmasq bridge-utils iptables hostapd net-tools \
 	&& rm -rf /var/lib/apt/lists/*
 CMD [ "/docker-init", "/start.sh", "/stop.sh" ]

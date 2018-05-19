@@ -1,0 +1,3 @@
+[submodule "soft-router-scripts"]
+	path = soft-router-scripts
+	url = ../soft-router-scripts.git

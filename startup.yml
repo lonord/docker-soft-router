@@ -1,0 +1,31 @@
+########################################################################
+#                                                                      #
+#    pre-defined arguments of `docker run` used by docker-startup      #
+#                                                                      #
+########################################################################
+
+# container name (--name argument of docker run)
+containerName: 'soft-router'
+
+# deamon mode (-d argument of docker run)
+deamon: true
+
+# mount volumes (-v argument of docker run), relative to volume root or sub directory, optional
+directoryMount:
+  - 'etc/hostapd:/etc/hostapd'
+  - 'etc/dnsmasq/dnsmasq.d:/etc/dnsmasq.d'
+  - 'run/dnsmasq:/var/run/dnsmasq'
+
+# special type of mount volumes, in prepare command, if source config file not exist, it will create by
+# copying from image
+configFileMount:
+  - 'etc/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf'
+  - 'etc/soft-router/soft-router.conf:/root/.soft-router/soft-router.conf'
+
+# port forward (-p argument of docker run), optional
+# portMap:
+#   - '80:8080'
+#   - '3306:3306'
+
+# other arguments of docker run, optional
+otherArguments: '--privileged --network=host'

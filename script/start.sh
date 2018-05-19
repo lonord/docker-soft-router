@@ -13,7 +13,7 @@ mkfifo $CTRL_FIFO
 while true
 do
 	read a < $CTRL_FIFO
-	if [ $a == "service dnsmasq restart" ]; then
+	if [ "$a" == "service dnsmasq restart" ]; then
 		service dnsmasq restart
 	fi
 done

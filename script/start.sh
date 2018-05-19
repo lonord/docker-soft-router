@@ -14,3 +14,5 @@ do
 		service dnsmasq restart
 	fi
 done
+
+service dnsmasq start

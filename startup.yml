@@ -13,15 +13,15 @@ deamon: true
 # mount volumes (-v argument of docker run), relative to volume root or sub directory, optional
 directoryMount:
   - 'etc/hostapd:/etc/hostapd'
-  - 'etc/dnsmasq/dnsmasq.d:/etc/dnsmasq.d'
-  - 'run/dnsmasq:/var/run/dnsmasq'
+  - '/etc/dnsmasq.d:/etc/dnsmasq.d'
+  - '/var/run/dnsmasq:/var/run/dnsmasq'
 
 # special type of mount volumes, in prepare command, if source config file not exist, it will create by
 # copying from image
 configFileMount:
   - 'etc/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf'
   - 'etc/soft-router/soft-router.conf:/root/.soft-router/soft-router.conf'
-  - 'etc/dnsmasq/dnsmasq.d/README:/etc/dnsmasq.d/README'
+  - '/etc/dnsmasq.d/README:/etc/dnsmasq.d/README'
 
 # port forward (-p argument of docker run), optional
 # portMap:

@@ -21,6 +21,7 @@ directoryMount:
 configFileMount:
   - 'etc/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf'
   - 'etc/soft-router/soft-router.conf:/root/.soft-router/soft-router.conf'
+  - 'etc/dnsmasq/dnsmasq.d/README:/etc/dnsmasq.d/README'
 
 # port forward (-p argument of docker run), optional
 # portMap:
